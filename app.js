@@ -2,13 +2,16 @@
 
 let amigos = [];
 
-//1.Agregar nombres.
+//1.AGREGAR NOMBRES.
 
 function agregarAmigo()
 {
     //Guardamos el nombre capturado en una variable.
     let nombre = document.querySelector(".input-name").value; 
 
+    //2.VALIDAMOS LA ENTRADA.
+    if (nombre) { // Si el input no está vacío
+    
     //Lo agregamos a la lista.
     amigos.push(nombre);
     
@@ -26,6 +29,11 @@ function agregarAmigo()
         li.textContent = amigo; // Agregar el texto del amigo
         lista.appendChild(li); // Agregar el <li> al <ul>
       });
+
+    }else{
+        alert("Por favor, ingresa un nombre válido(No vacío)."); // Mostrar alerta si el input está vacío
+    }
+    
 }
 
 
