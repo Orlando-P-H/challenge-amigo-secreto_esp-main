@@ -36,6 +36,24 @@ function agregarAmigo()
     
 }
 
+//2. Hacer el sorteo del amigo secreto.
+function sortearAmigo()
+{
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length); // Generamos un índice aleatorio.
+    let amigoAleatorio = amigos[indiceAleatorio]; // Obtiene el amigo aleatorio.
+
+    let listaRes = document.getElementById("resultado");
+
+    let elementosLi = listaRes.querySelectorAll("li");
+    elementosLi.forEach(li => li.remove());
+
+    //Mostramos el amigo secreto en el ul correspondiente.
+    let liRes = document.createElement("li"); // Crear un elemento <li>
+    liRes.textContent = "AMIGO SECRETO: " + amigoAleatorio; // Agregar el texto del amigo
+    listaRes.appendChild(liRes); // Agregar el <li> al <ul>
+
+}
+
 
 
 
